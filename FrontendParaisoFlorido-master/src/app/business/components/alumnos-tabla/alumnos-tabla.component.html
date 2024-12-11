@@ -1,0 +1,64 @@
+<div class="md:w-full md:h-full md:flex flex-col items-center w-[365px] ">
+  <p
+    class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-red-800 md:text-4xl"
+  >
+    {{ title }}
+  </p>
+  <div class="flex flex-col gap-6">
+    <div class="flex items-end justify-between flex-wrap gap-2">
+      <div class="flex gap-2 flex-wrap">
+        <div class="flex flex-col">
+          <label class="text-sm font-semibold" for="nombre">Nombre Alumno:</label>
+          <input class="text-sm rounded-md outline-none w-52  focus:border-red-800 focus:ring-red-800 " type="text" [(ngModel)]="filtroNombre" (input)="buscarAlumnos()"  placeholder="Buscar alumno" />
+        </div> 
+  
+        <div class="flex flex-col">
+          <label class="text-sm font-semibold" for="grado">Grado:</label>
+          <select
+            class="text-sm rounded-md focus:border-red-800 focus:ring-red-800"
+            [(ngModel)]="filtroGrado"
+            (change)="aplicarFiltro()"
+          >
+            <option class="hover:bg-red-800" value="">Todos</option>
+            <option class="hover:bg-red-800" value="PRIMERO">1º</option>
+            <option value="SEGUNDO">2º</option>
+            <option value="TERCERO">3º</option>
+            <option value="CUARTO">4º</option>
+            <option value="QUINTO">5º</option>
+          </select>
+        </div>
+  
+        <div class="flex flex-col">
+          <label class="text-sm font-semibold" for="seccion">Sección:</label>
+          <select
+            class="text-sm rounded-md focus:border-red-800 focus:ring-red-800"
+            [(ngModel)]="filtroSeccion"
+            (change)="aplicarFiltro()"
+          >
+            <option value="">Todos</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <button (click)="crearAlumno()" class="bg-red-800 text-sm text-white rounded-md gap-2 py-2 px-4 flex items-center font-semibold hover:bg-red-700">
+          <i class='bx bx-plus text-lg font-semibold'></i>
+          Añadir Alumno
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <app-table-action
+        [titulo]="title"
+        [nombreColumns]="nombreColumnas"
+        [columns]="columnas"
+        [data]="alumnosFiltrados"
+        (action)="onAction($event)"
+      ></app-table-action>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+Estilos del scannerQR
+*/
+#html5-qrcode-button-camera-start{
+    color: white !important;
+    padding: 6px 10px;
+    margin-top: 5px;
+    border: 2px solid;
+    border-radius: 8px;
+    background: #9b1c1c;
+}
+
+#html5-qrcode-button-camera-stop{
+    color: white !important;
+    padding: 6px 10px;
+    margin-top: 5px;
+    border: 2px solid;
+    border-radius: 8px;
+    background: #9b1c1c;
+}
+
+#html5-qrcode-anchor-scan-type-change{
+    display: none !important;
+}
+
+#html5-qrcode-select-camera{
+    border-radius: 8px;
+}
+
+#reader__dashboard_section_csr span:first-child{
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+
+#reader div:nth-child(1) img{
+    display: none !important;
+}
+
+#reader{
+    border: none !important;
+}
+
+#reader__scan_region img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#html5-qrcode-button-camera-permission{
+    color: white !important;
+    padding: 6px 10px;
+    margin-top: 15px;
+    border: 2px solid;
+    border-radius: 8px;
+    background: #9b1c1c; 
+}

@@ -1,0 +1,27 @@
+<div class="flex justify-start h-screen max-w-">
+    <div class="hidden md:block overflow-hidden">
+        <div class="">
+            <img class="h-screen max-w-screen-xl rounded-r-3xl " src="https://st.depositphotos.com/1075946/1393/i/450/depositphotos_13937489-stock-photo-teacher-helping-young-boy-with.jpg" alt="">
+        </div>
+    </div>
+    <div class="flex flex-col justify-center w-96 m-auto items-center p-6">
+        <a href="#">
+
+            <img class="w-80 pb-4" src="Logo-colegio.png" alt="">
+        </a>
+        <form class="w-80 flex flex-col">
+            <div class="mb-6">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo Electrónico</label>
+                <input [(ngModel)]="correo" name="email" type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 " placeholder="john.doe@company.com" required />
+            </div> 
+            <div class="mb-6">
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
+                <input [(ngModel)]="password" name="password" type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 " placeholder="•••••••••" required />
+            </div> 
+            <div class="flex justify-center">
+                <button (click)="login()" type="submit" class="text-white bg-red-800 hover:bg-red-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Ingresar</button>
+            </div>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,37 @@
+<main class=" ">
+  <div class="relative shadow-lg sm:rounded-lg">
+    <!-- Contenedor con scroll -->
+    <div class="overflow-y-auto max-h-[85vh] rounded-xl 2xl:max-h-[calc(88vh)]">
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+        <thead class="sticky top-0 text-xs text-gray-700 uppercase bg-gray-50  ">
+          <tr>
+            <!-- Columna dinámica -->
+            @for(column of columnas; track $index) {
+            <th scope="col" class="px-6 py-3 sticky top-0 bg-red-800 text-white ">
+              {{ nombreColumnas[column] || column }}
+            </th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+          @for(data of dataSource; track $index) {
+          <tr
+            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <!-- Datos dinámicos -->
+            @for(nombre of columnas; track $index) {
+            <td class="px-6 py-2">
+              @if(nombre.includes('.')) {
+              {{ data[nombre.split('.')[0]] ? data[nombre.split('.')[0]][nombre.split('.')[1]] : '' }}
+              }
+              @else {
+              {{ data[nombre] }}
+              }
+            </td>
+            }
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

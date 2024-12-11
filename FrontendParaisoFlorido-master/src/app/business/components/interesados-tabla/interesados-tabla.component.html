@@ -1,0 +1,16 @@
+<div class="md:w-full md:h-full md:flex flex-col items-center w-[365px]">
+    <p
+      class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-red-800 md:text-4xl"
+    >
+      {{ title }}
+    </p>
+    <div class="flex flex-col gap-6">
+      <app-table
+        [titulo]="title"
+        [nombreColumns]="nombreColumnas"
+        [columns]="columnas"
+        [data]="lista"
+      ></app-table>
+    </div>
+  </div>
+  

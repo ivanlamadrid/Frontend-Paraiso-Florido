@@ -1,0 +1,54 @@
+<div class="max-w-xl">
+  <!-- <div>
+    <a class="flex justify-start">
+      <a
+        (click)="regresarLista()"
+        class="text-white bg-red-800 flex items-center gap-2 cursor-pointer hover:bg-red-900 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+      >
+        <i class="bx bx-arrow-back text-[1.2rem]"></i>
+        Volver
+      </a>
+    </a>
+  </div> -->
+  <div class="flex flex-col gap-7 md:mt-7">
+    <div class="flex gap-7 flex-col items-center w-[280px] my-0 mx-auto md:flex-row md:w-auto">
+      <img class="w-48" src="avatar.webp">
+      <div>
+        <div class="flex flex-row flex-wrap gap-6">
+          <div>
+            <p class="font-bold text-sm">Nombre Completo:</p>
+            {{dataAlumno.nombre +" "+ dataAlumno.apellido}}
+          </div>
+          <div>
+            <p class="font-bold text-sm">Grado/Sección:</p>
+            {{dataAlumno.gradoId+dataAlumno.nombreSeccion}}
+          </div>
+          <div>
+            <p class="font-bold text-sm">Documento:</p>
+            {{dataAlumno.documento}}
+          </div>
+          <div>
+            <p class="font-bold text-sm">Edad:</p>
+            {{dataAlumno.edad}}
+          </div>
+          <div>
+            <p class="font-bold text-sm">Sexo:</p>
+            @if (dataAlumno.sexo === "M") {
+              <p>Masculino</p>
+            }
+            @else {
+              <p>Femenino</p>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <app-table
+      [columns]="columnas"
+      [nombreColumns]="nombreColumnas"
+      [data]="dataAsistencias"
+      ></app-table>
+    </div>
+  </div>
+</div>

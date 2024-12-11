@@ -1,0 +1,31 @@
+<div class="md:w-full md:h-full md:flex flex-col items-center w-[365px]">
+  <p
+    class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-red-800 md:text-4xl"
+  >
+    {{ title }}
+  </p>
+  <div class="flex flex-col gap-6">
+    <div class="flex gap-2">
+      <div class="flex flex-col">
+        <label class="text-sm font-semibold" for="grado"
+          >Filtrar por fecha:</label
+        >
+        <input
+          [(ngModel)]="filtroFecha"
+          (change)="aplicarFiltro()"
+          class="text-sm rounded-md w- focus:border-red-800 focus:ring-red-800"
+          type="date"
+          name=""
+          id=""
+        />
+      </div>
+    </div>
+
+    <app-table
+      [titulo]="title"
+      [nombreColumns]="nombreColumnas"
+      [columns]="columnas"
+      [data]="asistencias"
+    ></app-table>
+  </div>
+</div>
